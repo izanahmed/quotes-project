@@ -1,0 +1,15 @@
+<% provide(:title, "Quotes") %>
+
+<h1>All Quotes</h1>
+<div class="container bg-white rounded border border-dark p-3">
+  <% @quotes.each do | quote | %>
+  
+  <li><%= quote.name %></li>
+  <li><%= quote.desc %></li>
+
+  <% end %>
+  
+</ul>
+  
+</div>
+<ul>

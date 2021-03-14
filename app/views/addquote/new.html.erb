@@ -1,0 +1,15 @@
+<h1>Add Quote</h1>
+
+<%= form_for :quote do |form| %>
+  <div class="mb-3">
+    <p1 class="m-3">Name</p1>
+    <%= form.text_field :name %>
+  </div>
+  <div class="mb-3">
+    <p1 class="m-3">Add Quote</p1>
+    <%= form.text_field :desc %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit "Add Quote" %>
+  </div>
+<% end %>

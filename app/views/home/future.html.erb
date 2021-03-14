@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col p-5 m-5">
+      <div class="bg-info mb-3 pb-4">
+        <h1 class="mt-5 p-5">Welcome to the Future</h1>
+        <div class="d-flex justify-content-center mb-3">
+          <%= link_to 'Random Quote About Future', future_path, class: "btn btn-danger"%>
+        </div>
+        <blockquote class="blockquote text-center">
+          <p><%= @result %></p>
+        </blockquote>
+      </div>
+      <div class="col">
+        <div class="d-flex justify-content-around">
+          <%= link_to 'Present', root_path, class: "btn btn-danger" %>
+          <%= link_to 'Past', past_path, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+</div>
