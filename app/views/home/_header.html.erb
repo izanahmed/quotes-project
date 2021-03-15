@@ -18,9 +18,24 @@
       <li class="nav-item">
         <%= link_to 'Quotes', allquotes_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Add Quotes', addquote_path, class: "nav-link" %>
-      </li>
+      <% if @user %>
+        <li class="nav-item">
+          <%= link_to 'Add Quotes', addquote_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          Hi <%= @user.email %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log out', logout_path, class: "nav-link", method: :delete %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Log in', login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign up', signup_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
     </div>
   </div>

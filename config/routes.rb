@@ -5,7 +5,16 @@ Rails.application.routes.draw do
   
   get '/allquotes' => 'allquotes#manyquotes'
   
+  get '/signup' => 'registrations#new'
+
+  post '/signup' => 'registrations#create'
   
+  delete '/logout' => 'sessions#destroy'
+
+  get '/login' => 'sessions#new'
+
+  post '/login' => 'sessions#create'
+
   get '/addquote' => 'addquote#new'
   
   post '/addquote' => 'addquote#create'
