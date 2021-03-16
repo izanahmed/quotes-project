@@ -1,13 +1,18 @@
 class AddquoteController < ApplicationController
   def new
-    @quote = Quote.new
     if session[:user_id]
+      @quote = Quote.new
       @user = User.find_by(id: session[:user_id])
+    else
+      redirect_to login_path
     end
   end
   
   def create
-    @quote = Quote.create(quote_params)
+    @user = User.find_by(id: session[:user_id])
+    @quote = Quote.new(quote_params)
+    @quote.username = @user.email
+    @quote.save
     redirect_to allquotes_path
   end
   

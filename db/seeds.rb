@@ -8,7 +8,7 @@
 
 Quote.delete_all
 
-Quote.create(name: "Past", desc: "The way to get started is to quit talking and begin doing.")
-Quote.create(name: "Present", desc: "If life were predictable it would cease to be life, and be without flavor.")
-Quote.create(name: "Past", desc: "Life is what happens when you're busy making other plans.")
-Quote.create(name: "Future", desc: "The greatest glory in living lies not in never falling, but in rising every time we fall.")
+Quote.create(name: "Past", desc: "The way to get started is to quit talking and begin doing.", username: "izan@grinnell.edu")
+Quote.create(name: "Present", desc: "If life were predictable it would cease to be life, and be without flavor.", username: "izan@grinnell.edu")
+Quote.create(name: "Past", desc: "Life is what happens when you're busy making other plans.", username: "izan@grinnell.edu")
+Quote.create(name: "Future", desc: "The greatest glory in living lies not in never falling, but in rising every time we fall.", username: "izan@grinnell.edu")
