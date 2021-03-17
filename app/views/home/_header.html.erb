@@ -1,33 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Time Travel Machine</a>
+        <a class="navbar-brand" href="/">Random Quote</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Present', root_path, class: "nav-link" %>
-      </li>
       <li class="nav-item">
-        <%= link_to 'Future', future_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Past', past_path, class: "nav-link" %>
+        <%= link_to 'About', about_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to 'Quotes', allquotes_path, class: "nav-link" %>
       </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
       <% if @user %>
-        <li class="nav-item">
-          <%= link_to 'Add Quotes', addquote_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          Hi <%= @user.email %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Log out', logout_path, class: "nav-link", method: :delete %>
-        </li>
+          <li class="nav-item">
+            <%= link_to 'Add Quotes', addquote_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link">Hi <%= @user.email %></span>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Log out', logout_path, class: "nav-link", method: :delete %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Profile', profile_path, class: "nav-link"%>
+          </li>
       <% else %>
         <li class="nav-item">
           <%= link_to 'Log in', login_path, class: "nav-link" %>

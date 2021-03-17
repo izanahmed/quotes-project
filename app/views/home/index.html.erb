@@ -1,18 +1,20 @@
   <div class="row">
     <div class="col p-5 m-5">
       <div class="bg-secondary text-white mb-3 pb-4">
-        <h1 class="mt-5 p-5">Welcome to the Present</h1>
+        <h1 class="mt-5 p-5">Welcome to the Random Quote Generator</h1>
         <div class="d-flex justify-content-center mb-3">
-          <%= link_to 'Random Quote About Present', root_path, class: "btn btn-primary"%>
+          <%= link_to 'Random Quote', root_path, class: "btn btn-primary"%>
         </div>
-        <blockquote class="blockquote text-center">
-          <p>quoteee</p>
-        </blockquote>
-      </div>
-      <div class="col">
-        <div class="d-flex justify-content-around">
-          <%= link_to 'Future', future_path, class: "btn btn-primary" %>
-          <%= link_to 'Past', past_path, class: "btn btn-primary" %>
+        <div class="card m-5">
+          <div class="card-header text-center" style="color: black">
+            Your quote is:
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote text-center mb-0">
+              <p style="color: black">"<%= @result %>"</p>
+              <p style="color: black"> --- <%= @author %></p>
+            </blockquote>
+          </div>
         </div>
       </div>
     </div>

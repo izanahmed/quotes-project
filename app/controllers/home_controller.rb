@@ -3,35 +3,34 @@ class HomeController < ApplicationController
     if session[:user_id]
       @user = User.find_by(id: session[:user_id])
     end
-    # present=["The future depends on what you do today.", 
-    #           "The present changes the past.", 
-    #           "No one saves us but ourselves in this moment.", 
-    #           "This time you have, cherish it, it may never come back."]
-    # @num = (0..3).to_a.shuffle.first
-    # @result = present[@num]
+    quote_count = Quote.all.count
+    num = (1..quote_count).to_a.shuffle.first
+    @quote = Quote.find_by(id: num)
+    @result = @quote.desc
+    input = @quote.username
+    d = ""
+    input.split('').each { |c| 
+      if c == '@'
+        break
+      else
+        d += c
+      end
+    }
+    @author = d
   end
   
-  def past
+  def about
     if session[:user_id]
       @user = User.find_by(id: session[:user_id])
     end
-    # past=["The past is always tense, the future perfect.", 
-    #           "The past is never where you think you left it.", 
-    #           "Scars have the strange power to remind us that our past is real.", 
-    #           "The past beats inside me like a second heart."]
-    # @num = (0..3).to_a.shuffle.first
-    # @result = past[@num]
+    
   end
-  
-  def future
+
+  def profile
     if session[:user_id]
       @user = User.find_by(id: session[:user_id])
     end
-    # future=["Life can only be understood backwards; but it must be lived forwards.", 
-    #           "The future belongs to those who believe in the beauty of their dreams.", 
-    #           "The secret of your future is hidden in your daily routine.", 
-    #           "Destiny is no matter of chance."]
-    # @num = (0..3).to_a.shuffle.first
-    # @result = future[@num]
+    @quotes = Quote.where(["username = ?", @user.email])
+
   end
 end
