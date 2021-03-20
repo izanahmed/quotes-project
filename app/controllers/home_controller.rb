@@ -31,6 +31,5 @@ class HomeController < ApplicationController
       @user = User.find_by(id: session[:user_id])
     end
     @quotes = Quote.where(["username = ?", @user.email])
-
   end
 end

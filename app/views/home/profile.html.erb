@@ -1,15 +1,26 @@
 <% provide(:tag, "Quotes") %>
-
-<h1 class="my-4">My Quotes</h1>
-<div class="container bg-white rounded border border-dark p-3">
-  <% @quotes.each do | quote | %>
-  	<div class="card m-5">
+<% if !@quotes.present? %>
+  <div class="container bg-white rounded border border-dark mt-4 p-3">
+    <div class="card m-5">
         <div class="card-body">
-        	<blockquote class="blockquote text-center mb-0">
-        		<p style="color: black">Tag: <%= quote.name %></p>
-                <p style="color: black">"<%= quote.desc %>"</p>
+          <blockquote class="blockquote text-center mb-0">
+            <p style="color: black">You have not added any quotes yet! Feel free to add one!</p>
             </blockquote>
         </div>
     </div>
-  <% end %> 
-</div>
+  </div>
+<% else %>
+  <h1 class="my-4">My Quotes</h1>
+  <div class="container bg-white rounded border border-dark mb-4 p-3">
+    <% @quotes.each do | quote | %>
+  	 <div class="card m-5">
+        <div class="card-body">
+        	<blockquote class="blockquote text-center mb-0">
+        		<p style="color: black">Tag: <%= quote.name %></p>
+            <p style="color: black">"<%= quote.desc %>"</p>
+          </blockquote>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+<% end %>
